@@ -31,3 +31,21 @@ console.log({ peter, tony });
 // console.log({ pedro, pedroCopia });
 
 //! Arreglos
+const frutas = ['Manzana', 'Pera', 'Piña'];
+
+//const otrasFrutas = [...frutas]; //! Usando el spread operator
+//const otrasFrutas = frutas.slice(); //! Usando el método slice que crea una copia superficial del array
+
+//! El console.time y console.timeEnd son métodos que permiten medir el tiempo que tarda en ejecutarse un bloque de código, en este caso se está midiendo el tiempo que tarda en ejecutarse el método slice y el spread operator, es importante para medir el rendimiento de nuestro código.
+console.time('slice');
+const otrasFrutas = frutas.slice();
+console.timeEnd('slice');
+
+//! Es recomendable usar el spread operator ya que es más moderno y más rápido que el método slice.
+console.time('spread');
+const otrasFrutas2 = [...frutas]; //! El operador spread rompe la relación en memoria y crea un nuevo array con los mismos elementos.
+console.timeEnd('spread');
+
+otrasFrutas.push('Mango');
+
+console.table({ frutas, otrasFrutas });
