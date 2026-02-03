@@ -28,13 +28,13 @@ function imprimeArgumentos() {
 //   console.log(arguments)
 // };
 
-//! El operador rest (...) agrupa todos los argumentos en un arreglo [] llamado args, hay que tener en cuenta  varias consideraciones. Primero el operador rest siempre debe ser el ultimo parametro en una funcion despues de el no puede haber mas argumentos. Segundo si se necesita extraer algo del argumento independiente de los args por ejemplo la edad este debe estar antes del operador rest y tambien se debe llamar aparte en el retorno, la edad tomara como valor el primer argumento que se envie a la funcion y los demas argumentos se agruparan en args. En resumen el operador rest une todos los argumentos en una sola variable y los transforma en un arreglo [], se usa en la definicion de funciones o destructuracion.
+//! El operador rest (...) agrupa todos los argumentos en un arreglo [] llamado args, hay que tener en cuenta  varias consideraciones. Primero el operador rest siempre debe ser el ultimo parametro en una funcion despues de el no puede haber mas argumentos. Segundo si se necesita extraer algo del argumento independiente de los args por ejemplo la edad este debe estar antes del operador rest y tambien se debe llamar aparte en el retorno, la edad tomara como valor el primer argumento que se envie a la funcion y los demas argumentos se agruparan en args. En resumen el operador rest une todos los argumentos en una sola variable y los transforma en un arreglo [], se usa en la definición de funciones o destructuración.
 const imprimeArgumentos2 = (edad, ...args) => {
   // console.log({ edad, args });
   return args;
 };
 
-//! Como se esta retorando un arreglo [] se puede desestructurar en las variables que se quieran
+//! Como se esta retornando un arreglo [] se puede desestructurar en las variables que se quieran
 const [casado, vivo, nombre, saludo] = imprimeArgumentos2(10, true, false, 'Juan', 'Hola');
 console.log({casado, vivo, nombre, saludo});
 
