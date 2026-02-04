@@ -22,7 +22,7 @@ let dia = hoy.getDay();
 console.log(dia)
 console.log( { dia } )
 
-//! Esto es una asignacion y siempre va a ser true ya que dia siempre va a valer 0 porque un solo = es equivalente a una asignación no auna condición.
+//! Esto es una asignacion y siempre va a ser true ya que dia siempre va a valer 0 porque un solo = es equivalente a una asignación no a una condición.
 // if ( dia = 0 ) {
 //   console.log('Domingo');
 // } else {
@@ -37,8 +37,62 @@ console.log( { dia } )
 // }
   
 //! Esto es una comparación estricta y evalua tanto la condición como el tipo de dato.
-if ( dia === 4 ) {
+// if ( dia === 4 ) {
+//   console.log('Domingo');
+// } else {
+//   console.log('No es domingo');
+// }
+
+if ( dia === 0 ) {
   console.log('Domingo');
-} else {
-  console.log('No es domingo');
+} else if (dia === 1) {
+  console.log('Lunes')
+}else if (dia === 2) {
+  console.log('Martes')
+}else if (dia === 3) {
+  console.log('Miércoles')
+}else if (dia === 4) {
+  console.log('Jueves')
+}else if (dia === 5) {
+  console.log('Viernes')
+}else{
+  console.log('Es Sábado');
 }
+
+
+//! Alterntativa a usar la estructura de control else if - else y la estructura de control switch unicamente utilizando objetos o arrays:
+
+dia = 3; // 0:domingo, 1:lunes, 2:martes, 3:miércoles, 4:jueves, 5:viernes, 6:sábado
+
+//! Haciendo uso de un objeto:
+const diasSemana = {
+  0:'domingo',
+  1:'lunes',
+  2:'martes',
+  3:'miércoles',
+  4:'jueves',
+  5:'viernes',
+  6:'sábado',
+} 
+//! Se agrega () despues de diasSemana[dia] para ejecutar la función que retorna el nombre del día.
+console.log( diasSemana[dia] || 'Día no válido' ); 
+
+
+//! Haciendo uso de un objeto (tambien se pueden ejecutar procedimentos como funciones):
+// const diasSemana = {
+//   0: () => 'domingo - 0',
+//   1: () => 'lunes - 1',
+//   2: () => 'martes - 2',
+//   3: () => 'miércoles - 3',
+//   4: () => 'jueves - 4',
+//   5: () => 'viernes - 5',
+//   6: () => 'sábado - 6 ',
+// } 
+// //! Se agrega () despues de diasSemana[dia] para ejecutar la función que retorna el nombre del día.
+// console.log( diasSemana[dia] () || 'Día no válido' ); 
+
+
+//! Haciendo uso de un array:
+const diasSemanaArr = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado',];
+
+console.log( diasSemanaArr[dia] || 'Día no válido' );
